@@ -12,6 +12,7 @@ import About from "./screens/About";
 
 function App() {
   const { pathname } = useLocation();
+  console.log(pathname);
   let initialTab = "home";
   if (pathname !== "/" || pathname !== "addi-website/") {
     initialTab = pathname.replace("/", "");
