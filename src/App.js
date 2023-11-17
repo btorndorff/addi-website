@@ -10,7 +10,12 @@ import Pastry from "./screens/Pastry";
 import Writing from "./screens/Writing";
 import About from "./screens/About";
 
+function DesktopMessage() {
+  return <p>Please use this site on desktop!</p>;
+}
+
 function App() {
+  const [isMobileView, setIsMobileView] = useState(window.innerWidth <= 768);
   const { pathname } = useLocation();
   let initialTab = "home";
   if (pathname !== "/" && pathname !== "/addi-website" && pathname !== "") {
@@ -24,20 +29,47 @@ function App() {
     setSelectedTab(tab);
   };
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobileView(window.innerWidth <= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <>
-      <div className="App">
-        <img
-          className="background"
-          src="https://drive.google.com/uc?export=view&id=1UvgjBAi58_jEUbFSTnqgwCz1tbgkUkyL"
-        />
-        <Navbar selectedTab={selectedTab} setSelectedTab={changeSelectedTab} />
-      </div>
+      {!isMobileView && (
+        <div className="App">
+          <img
+            className="background"
+            src="https://drive.google.com/uc?export=view&id=1UvgjBAi58_jEUbFSTnqgwCz1tbgkUkyL"
+          />
+          <Navbar
+            selectedTab={selectedTab}
+            setSelectedTab={changeSelectedTab}
+          />
+        </div>
+      )}
 
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/addi-website" element={<Home />} />
-        <Route path="" element={<Home />} />
+        {isMobileView ? (
+          <>
+            <Route path="/" element={<DesktopMessage />} />
+            <Route path="/addi-website" element={<DesktopMessage />} />
+            <Route path="" element={<DesktopMessage />} />
+          </>
+        ) : (
+          <>
+            <Route path="/" element={<Home />} />
+            <Route path="/addi-website" element={<Home />} />
+            <Route path="" element={<Home />} />
+          </>
+        )}
         <Route path="/photo-video" element={<PhotoVideo />} />
         <Route path="/illustrations" element={<Illustrations />} />
         <Route path="/pastry" element={<Pastry />} />
