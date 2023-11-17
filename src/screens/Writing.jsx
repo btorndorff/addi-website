@@ -33,10 +33,12 @@ const writingData = [
     link: "https://drive.google.com/file/d/1NMRVr7sYM1hI_l8Tjs8RZIkjjBDRD47B/view?usp=sharing",
   },
   {
-    title: "poem2",
-    description: "this is a poem2",
-    image: "/temp",
-    link: "https://drive.google.com/file/d/1NMRVr7sYM1hI_l8Tjs8RZIkjjBDRD47B/view?usp=sharing",
+    title: "The Past We Take For Granted",
+    description:
+      "A writing about my experience with the Old Writings Lab (OWLS)",
+    image:
+      "https://drive.google.com/uc?export=view&id=14BFnzYpkK_IvFdOsh9_PjPzTLAZZxckz",
+    link: "https://drive.google.com/file/d/1pCro-xMXf95iLZGywzzkB54u2KRxCatU/view?usp=drive_link",
   },
   {
     title: "poem",

@@ -12,9 +12,8 @@ import About from "./screens/About";
 
 function App() {
   const { pathname } = useLocation();
-  console.log(pathname);
   let initialTab = "home";
-  if (pathname !== "/" || pathname !== "addi-website/") {
+  if (pathname !== "/" && pathname !== "/addi-website") {
     initialTab = pathname.replace("/", "");
   }
 
@@ -37,6 +36,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/addi-website" element={<Home />} />
         <Route path="/photo-video" element={<PhotoVideo />} />
         <Route path="/illustrations" element={<Illustrations />} />
         <Route path="/pastry" element={<Pastry />} />
