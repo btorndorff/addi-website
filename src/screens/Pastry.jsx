@@ -20,7 +20,7 @@ export default function About() {
     <div className="home">
       <div className="content">
         <div className="display-content">
-          <div className="photo-album">
+          <div className="photo-album" style={{ minHeight: "100vh" }}>
             <PhotoAlbum
               layout="masonry"
               columns={(containerWidth) => {

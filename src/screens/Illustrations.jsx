@@ -12,6 +12,9 @@ export default function Illustrations() {
   const [photoOpen, setPhotoOpen] = useState(false);
   const [displayPhoto, setDisplayPhoto] = useState([]);
 
+  const [toteOpen, setToteOpen] = useState(false);
+  const [displayTote, setDisplayTote] = useState([]);
+
   const [zineOpen, setZineOpen] = useState(false);
 
   const openZineModal = (photo) => {
@@ -22,6 +25,11 @@ export default function Illustrations() {
   const openPhotoModal = (photo) => {
     setDisplayPhoto({ src: photo });
     setPhotoOpen(true);
+  };
+
+  const openToteModal = (photo) => {
+    setDisplayTote({ src: photo });
+    setToteOpen(true);
   };
 
   return (
@@ -66,6 +74,44 @@ export default function Illustrations() {
                   render={{ iconSlideshowPlay: () => null }}
                 />
               </div>
+            </div>
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <div className="one-column">
+                <PhotoAlbum
+                  layout="masonry"
+                  columns={1}
+                  photos={[
+                    {
+                      src: "https://drive.google.com/uc?export=view&id=1hbuwKyiKdTu19okpYwOFc_sQuitl0LUM",
+                      width: 4032,
+                      height: 3024,
+                    },
+                  ]}
+                  targetRowHeight={150}
+                  renderPhoto={({
+                    photo,
+                    wrapperStyle,
+                    renderDefaultPhoto,
+                  }) => (
+                    <div
+                      onClick={() => openToteModal(photo.src)}
+                      style={wrapperStyle}
+                    >
+                      {renderDefaultPhoto({ wrapped: true })}
+                    </div>
+                  )}
+                />
+              </div>
+
+              <Lightbox
+                open={toteOpen}
+                close={() => setToteOpen(false)}
+                slides={[displayTote]}
+                render={{
+                  buttonPrev: () => null,
+                  buttonNext: () => null,
+                }}
+              />
             </div>
 
             <PhotoAlbum

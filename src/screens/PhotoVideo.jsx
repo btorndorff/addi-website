@@ -27,20 +27,23 @@ function PhotoVideo() {
   };
 
   const openVideoModal = (video) => {
-    console.log(video);
-    setDisplayVideo({
-      type: "video",
-      width: 1280,
-      height: 720,
-      poster: video.src,
-      sources: [
-        {
-          src: video.videoSrc,
-          type: "video/mp4",
-        },
-      ],
-    });
-    setVideoOpen(true);
+    if (video.name === "off_the_walls") {
+      window.open(video.videoSrc, "_blank", "noopener,noreferrer");
+    } else {
+      setDisplayVideo({
+        type: "video",
+        width: 1280,
+        height: 720,
+        poster: video.src,
+        sources: [
+          {
+            src: video.videoSrc,
+            type: "video/mp4",
+          },
+        ],
+      });
+      setVideoOpen(true);
+    }
   };
 
   return (
