@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.0f38ece6.css",
-    "main.js": "/static/js/main.c109bbbc.js",
-    "static/js/787.a2aaf78c.chunk.js": "/static/js/787.a2aaf78c.chunk.js",
-    "index.html": "/index.html",
-    "main.0f38ece6.css.map": "/static/css/main.0f38ece6.css.map",
-    "main.c109bbbc.js.map": "/static/js/main.c109bbbc.js.map",
-    "787.a2aaf78c.chunk.js.map": "/static/js/787.a2aaf78c.chunk.js.map"
+    "main.css": "/addi-website/static/css/main.0f38ece6.css",
+    "main.js": "/addi-website/static/js/main.65933d58.js",
+    "static/js/787.a2aaf78c.chunk.js": "/addi-website/static/js/787.a2aaf78c.chunk.js",
+    "index.html": "/addi-website/index.html",
+    "main.0f38ece6.css.map": "/addi-website/static/css/main.0f38ece6.css.map",
+    "main.65933d58.js.map": "/addi-website/static/js/main.65933d58.js.map",
+    "787.a2aaf78c.chunk.js.map": "/addi-website/static/js/787.a2aaf78c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0f38ece6.css",
-    "static/js/main.c109bbbc.js"
+    "static/js/main.65933d58.js"
   ]
 }
