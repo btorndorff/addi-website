@@ -1,7 +1,7 @@
 import { React, useState } from "react";
 import "../styles/home.css";
 import "../styles/photo.css";
-import Photos from "../components/Photos";
+import { Photos, FishCover, FishPhotos } from "../components/Photos";
 import Videos from "../components/VideoThumbnails";
 import { PhotoAlbum } from "react-photo-album";
 import Lightbox from "yet-another-react-lightbox";
@@ -20,6 +20,14 @@ function PhotoVideo() {
 
   const [photoOpen, setPhotoOpen] = useState(false);
   const [displayPhoto, setDisplayPhoto] = useState([]);
+
+  const [fishOpen, setFishOpen] = useState(false);
+  const [displayFish, setDisplayFish] = useState([]);
+
+  const openFishModal = (photo) => {
+    setDisplayFish({ src: photo });
+    setFishOpen(true);
+  };
 
   const openPhotoModal = (photo) => {
     setDisplayPhoto({ src: photo });
@@ -79,6 +87,40 @@ function PhotoVideo() {
               slides={[displayVideo]}
               plugins={[Video]}
             />
+
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <div className="one-column">
+                <PhotoAlbum
+                  layout="columns"
+                  columns={1}
+                  photos={FishCover}
+                  rowConstraints={{ singleRowMaxHeight: 500 }}
+                  renderPhoto={({
+                    photo,
+                    wrapperStyle,
+                    renderDefaultPhoto,
+                  }) => (
+                    <div
+                      className="video-container"
+                      style={wrapperStyle}
+                      onClick={() => openFishModal(photo)}
+                    >
+                      <div className="photo-div">
+                        {renderDefaultPhoto({ wrapped: true })}
+                      </div>
+                      <p style={{ color: "inherit" }}>{photo.title}</p>
+                    </div>
+                  )}
+                />
+
+                <Lightbox
+                  open={fishOpen}
+                  close={() => setFishOpen(false)}
+                  slides={FishPhotos}
+                  render={{ iconSlideshowPlay: () => null }}
+                />
+              </div>
+            </div>
 
             <PhotoAlbum
               layout="masonry"

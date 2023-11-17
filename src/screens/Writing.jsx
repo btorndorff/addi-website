@@ -4,14 +4,17 @@ import "../styles/photo.css";
 import "../styles/writing.css";
 
 const WritingCard = ({ title, description, image, link }) => {
-  console.log(link);
+  let styleTitle = "writing-card-image";
+  if (title === "The Past we Take Forward: Finding Community in Living Well") {
+    styleTitle = "writing-card-image-1";
+  }
 
   return (
     <div
       className="writing-card"
       onClick={() => window.open(link, "_blank", "noopener,noreferrer")}
     >
-      <div className="writing-card-image">
+      <div className={styleTitle}>
         <img src={image} alt={title} />
       </div>
 
@@ -26,25 +29,27 @@ const WritingCard = ({ title, description, image, link }) => {
 
 const writingData = [
   {
-    title: "The Past We Take For Granted",
+    title: "The Past we Take Forward: Finding Community in Living Well",
     description:
-      "A writing about my experience with the Old Writings Lab (OWLS)",
+      "A writing about my experience with the Older Writers Lab (OWLS)",
     image:
-      "https://drive.google.com/uc?export=view&id=14BFnzYpkK_IvFdOsh9_PjPzTLAZZxckz",
+      "https://drive.google.com/uc?export=view&id=1wdzwIhj09SdJvejAUZflKn9iwIpf9JcM",
     link: "https://drive.google.com/file/d/1pCro-xMXf95iLZGywzzkB54u2KRxCatU/view?usp=drive_link",
   },
   {
     title: "Collection of Poems",
-    description: "A few poems I have written over the years",
+    description: "\n\n",
     image:
       "https://drive.google.com/uc?export=view&id=1fKejRxf--BBqBFvEKp6REb34mUNsm1Xz",
     link: "https://drive.google.com/file/d/1NMRVr7sYM1hI_l8Tjs8RZIkjjBDRD47B/view?usp=sharing",
   },
   {
-    title: "",
-    description: "",
-    image: "/temp",
-    link: "https://drive.google.com/file/d/1NMRVr7sYM1hI_l8Tjs8RZIkjjBDRD47B/view?usp=sharing",
+    title: "A Walk Through Her Garden",
+    description:
+      "Short game developed on twine. Orignial art and writing and coded with the help of Benjamin Orndorff.",
+    image:
+      "https://drive.google.com/uc?export=view&id=1wxzxEB4tKczdYbHSah3DTSeOwyDVYfVH",
+    link: "/A Walk Through her Garden.html",
   },
 ];
 
@@ -72,7 +77,7 @@ export default function Writing() {
           >
             <div
               style={{
-                width: "80%",
+                width: "70%",
                 display: "grid",
                 gridTemplateColumns: "1fr 1fr",
                 gap: "20px",

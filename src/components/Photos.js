@@ -1,4 +1,3 @@
-// have to modify with width, height
 const imageFiles = [
   { src: "1t_Sb9EbTd3nv6YqgQXznnodafbz-kIta", width: 1536, height: 2317 },
   {
@@ -133,6 +132,85 @@ const imageFiles = [
   { src: "1rNH6PzP6dSSKZp9UEf2BU4YaJAe74cFa", width: 2317, height: 1536 },
 ];
 
+const fishFiles = [
+  {
+    src: "139uGyr2tPUkqDziCVZxtU9GoTKXlF-12",
+    width: 1089,
+    height: 722,
+    title: "ophelia stinks of roses and business casual",
+  },
+  {
+    src: "1dtlNm9PY4fPGtHtMu2uFv0J6heq_D7Ci",
+    width: 1089,
+    height: 722,
+  },
+  {
+    src: "1Brocc4AZuzIVPzqOMjQbYhQHrizQttlY",
+    width: 1089,
+    height: 722,
+  },
+  {
+    src: "1eUdNW9k-hFK3WUyTnWUgAU_tSXVCFdv2",
+    width: 1089,
+    height: 722,
+  },
+  {
+    src: "1bRw_pqwzlj7MXGRLisJ6qnfwL6Qr-iEq",
+    width: 1089,
+    height: 722,
+  },
+  {
+    src: "1ktNHD8XE4eJZ0LOHwQtzlpdIc6MyJnTD",
+    width: 1089,
+    height: 722,
+  },
+  {
+    src: "1gw-YdCdfgcDswS784hw5jxG6gegZ6xDE",
+    width: 1089,
+    height: 722,
+  },
+  {
+    src: "1aya8aDmXyfEuugwxd9ZlATrtKlLLEw_V",
+    width: 1089,
+    height: 722,
+  },
+  {
+    src: "18R-tNvew_R1SHwXKgAYGHfF-akqboi1e",
+    width: 1089,
+    height: 722,
+  },
+  {
+    src: "1qt56BcUcviC-lvG9LeHp21u67mV_v5j_",
+    width: 1089,
+    height: 722,
+  },
+  {
+    src: "1_n0ubOY8y4LO8ZUehH94jXhPh4GoKBoz",
+    width: 1089,
+    height: 722,
+  },
+  {
+    src: "1z1_cqn3CzKmeIHk5N98t29HrR7DVLj0Q",
+    width: 1089,
+    height: 722,
+  },
+  {
+    src: "1ueIz1gJV5-EnAyzi4gO6OOIBctnzB3g6",
+    width: 1089,
+    height: 722,
+  },
+  {
+    src: "19Y_s54O7ajtwso1p3UaFCmJtqyMRgcot",
+    width: 1089,
+    height: 722,
+  },
+  {
+    src: "1f7cvreGFrTCvM_bmUwyaDDWjdyO2Z0iW",
+    width: 1089,
+    height: 722,
+  },
+];
+
 // Function to generate the array of objects
 function organizeImages(files) {
   const link = "https://drive.google.com/uc?export=view&id=";
@@ -141,10 +219,14 @@ function organizeImages(files) {
       src: link + file.src,
       width: file.width,
       height: file.height,
+      // "ophelia stinks of roses and business casual"
+      title: "OPHELIA STINKS OF ROSES AND BUSINESS CASUAL",
     };
   });
 }
 
-const Photos = organizeImages(imageFiles);
+export const Photos = organizeImages(imageFiles);
+export const FishCover = organizeImages([fishFiles[0]]);
+export const FishPhotos = organizeImages(fishFiles);
 
 export default Photos;
