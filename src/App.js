@@ -12,7 +12,10 @@ import About from "./screens/About";
 
 function App() {
   const { pathname } = useLocation();
-  const initialTab = pathname === "/" ? "home" : pathname.replace("/", "");
+  let initialTab = "home";
+  if (pathname !== "/" || pathname !== "addi-website") {
+    initialTab = pathname.replace("/", "");
+  }
 
   const [selectedTab, setSelectedTab] = useState(initialTab);
 
