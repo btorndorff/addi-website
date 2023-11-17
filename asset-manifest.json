@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/addi-website/static/css/main.0f38ece6.css",
-    "main.js": "/addi-website/static/js/main.de2b10ec.js",
+    "main.css": "/addi-website/static/css/main.ae6c193c.css",
+    "main.js": "/addi-website/static/js/main.71391c7b.js",
     "static/js/787.a2aaf78c.chunk.js": "/addi-website/static/js/787.a2aaf78c.chunk.js",
     "index.html": "/addi-website/index.html",
-    "main.0f38ece6.css.map": "/addi-website/static/css/main.0f38ece6.css.map",
-    "main.de2b10ec.js.map": "/addi-website/static/js/main.de2b10ec.js.map",
+    "main.ae6c193c.css.map": "/addi-website/static/css/main.ae6c193c.css.map",
+    "main.71391c7b.js.map": "/addi-website/static/js/main.71391c7b.js.map",
     "787.a2aaf78c.chunk.js.map": "/addi-website/static/js/787.a2aaf78c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0f38ece6.css",
-    "static/js/main.de2b10ec.js"
+    "static/css/main.ae6c193c.css",
+    "static/js/main.71391c7b.js"
   ]
 }
