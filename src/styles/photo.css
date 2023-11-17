@@ -31,10 +31,17 @@
   width: 100%;
 }
 
+.zine {
+  height: 100%;
+  width: 100%;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
 .photo-div:hover {
   filter: brightness(50%);
 }
 
 .one-column {
-  width: 40%;
+  width: 60%;
+  margin-bottom: 15px;
 }

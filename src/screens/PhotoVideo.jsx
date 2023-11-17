@@ -27,14 +27,15 @@ function PhotoVideo() {
   };
 
   const openVideoModal = (video) => {
+    console.log(video);
     setDisplayVideo({
       type: "video",
       width: 1280,
       height: 720,
-      poster: `/videos/${video.src}`,
+      poster: video.src,
       sources: [
         {
-          src: _replaceExtensionWithMp4(video.src),
+          src: video.videoSrc,
           type: "video/mp4",
         },
       ],

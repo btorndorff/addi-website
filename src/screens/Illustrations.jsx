@@ -46,7 +46,12 @@ export default function Illustrations() {
                       style={wrapperStyle}
                       onClick={() => openZineModal(photo)}
                     >
-                      <div className="photo-div">
+                      <div
+                        className="photo-div"
+                        style={{
+                          boxShadow: "5px 5px 5px 5px rgba(0, 0, 0, 0.5)",
+                        }}
+                      >
                         {renderDefaultPhoto({ wrapped: true })}
                       </div>
                       <p style={{ color: "inherit" }}>{photo.title}</p>

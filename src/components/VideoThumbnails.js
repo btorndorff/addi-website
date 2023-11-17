@@ -1,20 +1,21 @@
 const videoThumbnails = [
   {
-    name: "tabi_tabi_po.gif",
+    name: "tabi_tabi_po",
     width: 3024,
     height: 1697,
     title: "TABI TABI PO",
-    videoSrc: "public/videos/tabi_tabi_po.mp4",
-    videoLink:
-      "https://www.youtube.com/watch?v=XNPQpANWvg4&ab_channel=AddiGilliam",
+    src: "https://drive.google.com/uc?export=view&id=1UvgjBAi58_jEUbFSTnqgwCz1tbgkUkyL",
+    videoSrc:
+      "https://drive.google.com/uc?export=view&id=1f5dsMM5Xqi2f8G9lYuGuvl5zXmN4okmf",
   },
-  //   need to get gif of this
   {
-    name: "off_the_walls.png",
+    name: "off_the_walls",
     width: 3024,
     height: 1697,
     title: "OFF THE WALLS",
-    videoSrc: "public/videos/off_the_walls.mp4",
+    src: "https://drive.google.com/uc?export=view&id=1WMig74KcmdxY1P8PlsGHG_uXd6yuFFtU",
+    videoSrc:
+      "https://drive.google.com/uc?export=view&id=1S0wU7sb1K7x5siWcatQ3H6AUv7jZiHgW",
   },
 ];
 
@@ -22,9 +23,8 @@ const videoThumbnails = [
 function organizeImages(files) {
   return files.map((file) => {
     console.log(file);
-    const path = `/videos/${file.name}`;
     return {
-      src: path,
+      src: file.src,
       width: file.width,
       height: file.height,
       title: file.title,
@@ -32,6 +32,6 @@ function organizeImages(files) {
   });
 }
 
-const Videos = organizeImages(videoThumbnails);
+const Videos = videoThumbnails;
 
 export default Videos;

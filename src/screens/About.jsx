@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React } from "react";
 import "../styles/home.css";
 import "../styles/photo.css";
 
@@ -8,10 +8,50 @@ export default function About() {
       <div className="content">
         <div
           className="display-content"
-          style={{ display: "flex", color: "black", minHeight: "100%" }}
+          style={{
+            height: "100vh",
+            alignItems: "center",
+            color: "black",
+          }}
         >
-          <img src="addi.jpg" style={{ width: "500px" }} />
-          <p>addi is suppper cool</p>
+          <div style={{ display: "flex", gap: "20px", margin: "10%" }}>
+            <img
+              src="https://drive.google.com/uc?export=view&id=1bTfnWtbQnXMw8GfuUeoPWhGEQSGUUQe0"
+              style={{ width: "40%", height: "auto" }}
+            />
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+              }}
+            >
+              <p>
+                Hello! I’m <strong>Adrienne Gilliam</strong>, a passionate and
+                detail oriented baking professional with a Bachelor’s degree in
+                English from the University of Virginia. Over the past five
+                years, I’ve cultivated a strong foundation in writing and
+                communication through the various projects you can view here and
+                also through my work experience in the culinary industry. I
+                thrive on community engagement and creative enrichment. With my
+                English degree, I bring a blend of academic knowledge and
+                practical expertise to my projects. As you explore my portfolio,
+                you’ll find a collection of my passion projects that reflect my
+                commitment to continuous learning, connections, and design. I’m
+                excited to share my creative journey and I invite you to reach
+                out to me!
+              </p>
+              <p>
+                💌{" "}
+                <a
+                  href="mailto:oneinagilliam@gmail.com"
+                  style={{ textDecoration: "none", color: "black" }}
+                >
+                  <strong>{"oneinagilliam@gmail.com"}</strong>
+                </a>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

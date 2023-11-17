@@ -1,0 +1,36 @@
+.writing-card {
+  margin-bottom: 1rem;
+  /* border-radius: 0.5rem; */
+  background-color: #fff;
+  border: black solid 1px;
+  /* box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1); */
+}
+
+.writing-card:hover {
+  /* box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2); */
+  filter: brightness(90%);
+}
+
+.writing-card-image {
+  overflow: hidden;
+}
+
+.writing-card-image img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.writing-card-content {
+  padding: 1rem;
+}
+
+.writing-card-content h3 {
+  font-weight: 500;
+  margin: 0.5rem 0;
+}
+
+.writing-card-content p {
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+}
