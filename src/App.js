@@ -37,6 +37,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/addi-website" element={<Home />} />
+        <Route path="" element={<Home />} />
         <Route path="/photo-video" element={<PhotoVideo />} />
         <Route path="/illustrations" element={<Illustrations />} />
         <Route path="/pastry" element={<Pastry />} />
