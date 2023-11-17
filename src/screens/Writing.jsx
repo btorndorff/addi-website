@@ -41,8 +41,8 @@ const writingData = [
     link: "https://drive.google.com/file/d/1NMRVr7sYM1hI_l8Tjs8RZIkjjBDRD47B/view?usp=sharing",
   },
   {
-    title: "poem",
-    description: "this is a poem",
+    title: "",
+    description: "",
     image: "/temp",
     link: "https://drive.google.com/file/d/1NMRVr7sYM1hI_l8Tjs8RZIkjjBDRD47B/view?usp=sharing",
   },
