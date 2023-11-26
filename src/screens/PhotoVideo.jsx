@@ -59,6 +59,7 @@ function PhotoVideo() {
       <div className="content">
         <div className="display-content">
           <div className="photo-album">
+            {/* videos */}
             <PhotoAlbum
               layout="rows"
               photos={Videos}
@@ -88,6 +89,7 @@ function PhotoVideo() {
               plugins={[Video]}
             />
 
+            {/* fish photos */}
             <div style={{ display: "flex", justifyContent: "center" }}>
               <div className="one-column">
                 <PhotoAlbum
@@ -122,6 +124,7 @@ function PhotoVideo() {
               </div>
             </div>
 
+            {/* film photos */}
             <PhotoAlbum
               layout="masonry"
               columns={(containerWidth) => {
@@ -130,7 +133,6 @@ function PhotoVideo() {
                 return 3;
               }}
               photos={Photos}
-              targetRowHeight={150}
               renderPhoto={({ photo, wrapperStyle, renderDefaultPhoto }) => (
                 <div
                   onClick={() => openPhotoModal(photo.src)}

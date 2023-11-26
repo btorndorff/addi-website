@@ -47,7 +47,7 @@ function App() {
         <div className="App">
           <img
             className="background"
-            src="https://drive.google.com/uc?export=view&id=1UvgjBAi58_jEUbFSTnqgwCz1tbgkUkyL"
+            src="/assets/ghibli.GIF"
           />
           <Navbar
             selectedTab={selectedTab}
