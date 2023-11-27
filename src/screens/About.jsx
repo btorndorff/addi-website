@@ -10,20 +10,20 @@ export default function About() {
           className="display-content"
           style={{
             height: "100vh",
-            alignItems: "center",
+            alignItems: "flex-start",
             color: "black",
           }}
         >
           <div style={{ display: "flex", gap: "20px", margin: "10%" }}>
             <img
-              src="https://drive.google.com/uc?export=view&id=1bTfnWtbQnXMw8GfuUeoPWhGEQSGUUQe0"
+              src="/assets/about.jpg"
               style={{ width: "40%", height: "auto" }}
             />
             <div
               style={{
                 display: "flex",
                 flexDirection: "column",
-                alignItems: "center",
+                alignItems: "center"
               }}
             >
               <p>

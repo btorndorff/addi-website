@@ -4,7 +4,7 @@ const videoThumbnails = [
     width: 3024,
     height: 1697,
     title: "TABI TABI PO",
-    src: "https://drive.google.com/uc?export=view&id=1UvgjBAi58_jEUbFSTnqgwCz1tbgkUkyL",
+    src: "/assets/ghibli.GIF",
     videoSrc:
       "https://drive.google.com/uc?export=view&id=1f5dsMM5Xqi2f8G9lYuGuvl5zXmN4okmf",
   },
@@ -13,23 +13,10 @@ const videoThumbnails = [
     width: 3024,
     height: 1697,
     title: "OFF THE WALLS",
-    src: "https://drive.google.com/uc?export=view&id=1WMig74KcmdxY1P8PlsGHG_uXd6yuFFtU",
+    src: "/assets/videos/off_the_walls.gif",
     videoSrc: "https://www.youtube.com/watch?v=zM1QTgq6a9A",
   },
 ];
-
-// Function to generate the array of objects
-function organizeImages(files) {
-  return files.map((file) => {
-    console.log(file);
-    return {
-      src: file.src,
-      width: file.width,
-      height: file.height,
-      title: file.title,
-    };
-  });
-}
 
 const Videos = videoThumbnails;
 

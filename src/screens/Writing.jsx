@@ -33,14 +33,14 @@ const writingData = [
     description:
       "A writing about my experience with the Older Writers Lab (OWLS)",
     image:
-      "https://drive.google.com/uc?export=view&id=1wdzwIhj09SdJvejAUZflKn9iwIpf9JcM",
+      "/assets/writing/owls.png",
     link: "https://drive.google.com/file/d/1pCro-xMXf95iLZGywzzkB54u2KRxCatU/view?usp=drive_link",
   },
   {
     title: "Collection of Poems",
     description: "\n\n",
     image:
-      "https://drive.google.com/uc?export=view&id=1fKejRxf--BBqBFvEKp6REb34mUNsm1Xz",
+      "/assets/writing/poems.jpeg",
     link: "https://drive.google.com/file/d/1NMRVr7sYM1hI_l8Tjs8RZIkjjBDRD47B/view?usp=sharing",
   },
   {
@@ -48,7 +48,7 @@ const writingData = [
     description:
       "Short game developed on twine. Orignial art and writing and coded with the help of Benjamin Orndorff.",
     image:
-      "https://drive.google.com/uc?export=view&id=1wxzxEB4tKczdYbHSah3DTSeOwyDVYfVH",
+      "/assets/writing/game.png",
     link: "/A Walk Through her Garden.html",
   },
 ];

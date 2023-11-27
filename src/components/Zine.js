@@ -1,79 +1,27 @@
-// have to modify with width, height
 const imageFiles = [
-  {
-    src: "1vQFrnwlOf5-n5KOaMSioho_lH2JbpTXg",
-    width: 2215,
-    height: 1697,
-    title: "FEED ME",
-  },
-  {
-    src: "1rikeK47NnAaHNCefzB4n0m6NVcLXTeE0",
-    width: 2215,
-    height: 1697,
-    title: "FEED ME",
-  },
-  {
-    src: "1qGdprbXyHgNmWAwU0sckJwMzswJGd9cP",
-    width: 2215,
-    height: 1697,
-    title: "FEED ME",
-  },
-  {
-    src: "1bqbmDEI6GsnnnQ93r1LKrNlIoq4vTtY4",
-    width: 2215,
-    height: 1697,
-    title: "FEED ME",
-  },
-  {
-    src: "1Q3ty7_mxXWedVODREWjweg1hd78H8Eed",
-    width: 2215,
-    height: 1697,
-    title: "FEED ME",
-  },
-  {
-    src: "1bKldGODSm4AS3CB_ssnPezJPmcnVgeQx",
-    width: 2215,
-    height: 1697,
-    title: "FEED ME",
-  },
-  {
-    src: "1vzlWRNKpLnKX6NaTuboZCZWgKc0_uPu_",
-    width: 2215,
-    height: 1697,
-    title: "FEED ME",
-  },
-  {
-    src: "1mThuzDfXOBFvB4S4DBxoHOKzGrvFOd3n",
-    width: 2215,
-    height: 1697,
-    title: "FEED ME",
-  },
-  {
-    src: "1hOQro-PUZ7KY_2viLT6Yosxcp27uOH7P",
-    width: 2215,
-    height: 1697,
-    title: "FEED ME",
-  },
-  {
-    src: "1XqUPoDPI5WDFEUvlR-mXyxChdrzyXtcg",
-    width: 2215,
-    height: 1697,
-    title: "FEED ME",
-  },
-];
+  { src: "1.jpg", width: 2215, heigth: 1697 },
+  { src: "2.jpg", width: 2215, heigth: 1697 },
+  { src: "3.jpg", width: 2215, heigth: 1697 },
+  { src: "4.jpg", width: 2215, heigth: 1697 },
+  { src: "5.jpg", width: 2215, heigth: 1697 },
+  { src: "6.jpg", width: 2215, heigth: 1697 },
+  { src: "7.jpg", width: 2215, heigth: 1697 },
+  { src: "8.jpg", width: 2215, heigth: 1697 },
+  { src: "9.jpg", width: 2215, heigth: 1697 },
+  { src: "10.jpg", width: 2215, heigth: 1697 },
+]
 
-// Function to generate the array of objects
 function organizeImages(files) {
-  const link = "https://drive.google.com/uc?export=view&id=";
+  const filePath = "/assets/illustrations/zine/"
   return files.map((file) => {
     return {
-      src: link + file.src,
+      src: filePath + file.src,
       width: file.width,
       height: file.height,
-      title: file.title,
+      title: !!file.title ? file.title : null,
     };
   });
 }
 
-export const ZineCover = organizeImages([imageFiles[0]]);
+export const ZineCover = [{src: "/assets/illustrations/zine/cover.jpg", width: 1730, height: 2574 , title: "FEED ME"}];
 export const Zine = organizeImages(imageFiles);

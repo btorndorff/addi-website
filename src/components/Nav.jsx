@@ -31,6 +31,14 @@ function Nav({ selectedTab, setSelectedTab }) {
             Photo/Video
           </Link>
           <Link
+            to="/writing"
+            className={selectedTab === "writing" ? "selected" : ""}
+            onClick={() => setSelectedTab("writing")}
+            style={{ color, borderColor: color }}
+          >
+            Writing
+          </Link>
+          <Link
             to="/illustrations"
             className={selectedTab === "illustrations" ? "selected" : ""}
             onClick={() => setSelectedTab("illustrations")}
@@ -46,14 +54,7 @@ function Nav({ selectedTab, setSelectedTab }) {
           >
             Pastry
           </Link>
-          <Link
-            to="/writing"
-            className={selectedTab === "writing" ? "selected" : ""}
-            onClick={() => setSelectedTab("writing")}
-            style={{ color, borderColor: color }}
-          >
-            Writing
-          </Link>
+          
           <Link
             to="/about"
             className={selectedTab === "about" ? "selected" : ""}

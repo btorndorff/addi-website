@@ -73,7 +73,7 @@ function PhotoVideo() {
                   <div className="photo-div">
                     {renderDefaultPhoto({ wrapped: true })}
                   </div>
-                  <p style={{ color: "inherit" }}>{photo.title}</p>
+                  <p style={{ color: "inherit", fontSize: "1vw" }}>{photo.title}</p>
                 </div>
               )}
             />
@@ -110,7 +110,7 @@ function PhotoVideo() {
                       <div className="photo-div">
                         {renderDefaultPhoto({ wrapped: true })}
                       </div>
-                      <p style={{ color: "inherit" }}>{photo.title}</p>
+                      <p style={{ color: "inherit", fontSize: "1vw"}}>{photo.title}</p>
                     </div>
                   )}
                 />

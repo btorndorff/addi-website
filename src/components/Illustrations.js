@@ -1,27 +1,27 @@
 // have to modify with width, height
 const imageFiles = [
   {
-    src: "1NtNdhBD33XlfWTGnwfRrdqPhlf9EN_Yn",
+    src: "1.PNG",
     width: 1536,
     height: 2049,
   },
   {
-    src: "1LuCrbvEsZrL3U_zT9ElsCSBXUq1_QIT9",
+    src: "2.JPG",
     width: 1536,
     height: 2049,
   },
   {
-    src: "1qIarujwrKL7e3EQSj9xVwdcpRYuV8NmY",
+    src: "3.JPG",
     width: 2049,
     height: 1536,
   },
   {
-    src: "1T_--Y9mSwWRpT6hdSiwdORYuw-kIIBMV",
+    src: "4.JPG",
     width: 2432,
     height: 1536,
   },
   {
-    src: "1izprBa_Sa9LJNsq7BmzWApoWDcHANsb1",
+    src: "5.heic",
     width: 2049,
     height: 1536,
   },
@@ -29,10 +29,10 @@ const imageFiles = [
 
 // Function to generate the array of objects
 function organizeImages(files) {
-  const link = "https://drive.google.com/uc?export=view&id=";
+  const filePath = "/assets/illustrations/"
   return files.map((file) => {
     return {
-      src: link + file.src,
+      src: filePath + file.src,
       width: file.width,
       height: file.height,
     };

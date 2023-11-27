@@ -6,7 +6,6 @@ import { ZineCover, Zine } from "../components/Zine";
 import { PhotoAlbum } from "react-photo-album";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
-import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
 
 export default function Illustrations() {
   const [photoOpen, setPhotoOpen] = useState(false);
@@ -82,7 +81,7 @@ export default function Illustrations() {
                   columns={1}
                   photos={[
                     {
-                      src: "https://drive.google.com/uc?export=view&id=1hbuwKyiKdTu19okpYwOFc_sQuitl0LUM",
+                      src: "/assets/illustrations/bag.jpeg",
                       width: 4032,
                       height: 3024,
                     },
