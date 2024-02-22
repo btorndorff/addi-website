@@ -6,7 +6,7 @@ const videoThumbnails = [
     title: "TABI TABI PO",
     src: "/assets/ghibli.GIF",
     videoSrc:
-      "https://drive.google.com/uc?export=view&id=1f5dsMM5Xqi2f8G9lYuGuvl5zXmN4okmf",
+      "https://youtu.be/XNPQpANWvg4?si=bQxDvfwOGBOzbZD6f",
   },
   {
     name: "off_the_walls",
