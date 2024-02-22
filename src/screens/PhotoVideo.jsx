@@ -35,23 +35,24 @@ function PhotoVideo() {
   };
 
   const openVideoModal = (video) => {
-    if (video.name === "off_the_walls") {
-      window.open(video.videoSrc, "_blank", "noopener,noreferrer");
-    } else {
-      setDisplayVideo({
-        type: "video",
-        width: 1280,
-        height: 720,
-        poster: video.src,
-        sources: [
-          {
-            src: video.videoSrc,
-            type: "video/mp4",
-          },
-        ],
-      });
-      setVideoOpen(true);
-    }
+    window.open(video.videoSrc, "_blank", "noopener,noreferrer");
+    // if (video.name === "off_the_walls") {
+    //   window.open(video.videoSrc, "_blank", "noopener,noreferrer");
+    // } else {
+    //   setDisplayVideo({
+    //     type: "video",
+    //     width: 1280,
+    //     height: 720,
+    //     poster: video.src,
+    //     sources: [
+    //       {
+    //         src: video.videoSrc,
+    //         type: "video/mp4",
+    //       },
+    //     ],
+    //   });
+    //   setVideoOpen(true);
+    // }
   };
 
   return (
