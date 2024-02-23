@@ -1,7 +1,11 @@
 import { React, useState } from "react";
 import "../styles/home.css";
 import "../styles/photo.css";
-import IllustrationFiles from "../components/Illustrations";
+import {
+  IllustrationFiles,
+  chickenCover,
+  chickenPhotos,
+} from "../components/Illustrations";
 import { ZineCover, Zine } from "../components/Zine";
 import { PhotoAlbum } from "react-photo-album";
 import Lightbox from "yet-another-react-lightbox";
@@ -17,7 +21,6 @@ export default function Illustrations() {
   const [zineOpen, setZineOpen] = useState(false);
 
   const openZineModal = (photo) => {
-    console.log(photo);
     setZineOpen(true);
   };
 
@@ -31,6 +34,7 @@ export default function Illustrations() {
     setToteOpen(true);
   };
 
+  console.log(IllustrationFiles);
   return (
     <div className="home">
       <div className="content">
@@ -74,43 +78,44 @@ export default function Illustrations() {
                 />
               </div>
             </div>
+
             <div style={{ display: "flex", justifyContent: "center" }}>
               <div className="one-column">
                 <PhotoAlbum
-                  layout="masonry"
+                  layout="columns"
                   columns={1}
-                  photos={[
-                    {
-                      src: "/assets/illustrations/bag.jpeg",
-                      width: 4032,
-                      height: 3024,
-                    },
-                  ]}
-                  targetRowHeight={150}
+                  photos={chickenCover}
+                  rowConstraints={{ singleRowMaxHeight: 500 }}
                   renderPhoto={({
                     photo,
                     wrapperStyle,
                     renderDefaultPhoto,
                   }) => (
                     <div
-                      onClick={() => openToteModal(photo.src)}
+                      className="video-container"
                       style={wrapperStyle}
+                      onClick={() => openToteModal(photo)}
                     >
-                      {renderDefaultPhoto({ wrapped: true })}
+                      <div
+                        className="photo-div"
+                        style={{
+                          boxShadow: "5px 5px 5px 5px rgba(0, 0, 0, 0.5)",
+                        }}
+                      >
+                        {renderDefaultPhoto({ wrapped: true })}
+                      </div>
+                      <p style={{ color: "inherit" }}>{photo.title}</p>
                     </div>
                   )}
                 />
-              </div>
 
-              <Lightbox
-                open={toteOpen}
-                close={() => setToteOpen(false)}
-                slides={[displayTote]}
-                render={{
-                  buttonPrev: () => null,
-                  buttonNext: () => null,
-                }}
-              />
+                <Lightbox
+                  open={toteOpen}
+                  close={() => setToteOpen(false)}
+                  slides={chickenPhotos}
+                  render={{ iconSlideshowPlay: () => null }}
+                />
+              </div>
             </div>
 
             <PhotoAlbum

@@ -1,5 +1,5 @@
 const imageFiles = [
-  { src: "1.jpeg", width: 1536, height: 2317  },
+  { src: "1.jpeg", width: 1536, height: 2317 },
   { src: "2.jpeg", width: 2317, height: 1536 },
   { src: "3.jpeg", width: 2317, height: 1536 },
   { src: "4.jpeg", width: 2317, height: 1536 },
@@ -26,19 +26,53 @@ const imageFiles = [
   { src: "25.JPG", width: 2317, height: 1536 },
   { src: "26.JPG", width: 2317, height: 1536 },
   { src: "27.JPG", width: 2317, height: 1536 },
-  { src: "28.JPG", width: 2317, height: 1536 }, 
+  { src: "28.JPG", width: 2317, height: 1536 },
   { src: "29.JPG", width: 2317, height: 1536 },
   { src: "30.JPG", width: 2317, height: 1536 },
   { src: "31.JPG", width: 2317, height: 1536 },
   { src: "32.JPG", width: 2317, height: 1536 },
   { src: "33.JPG", width: 2317, height: 1536 },
   { src: "34.JPG", width: 2317, height: 1536 },
-  { src: "35.JPG", width: 2317, height: 1536 }
+  { src: "35.JPG", width: 2317, height: 1536 },
+  { src: "36.jpg", width: 830, height: 744 },
+  { src: "37.jpg", width: 3089, height: 2048 },
+  { src: "38.jpg", width: 3089, height: 2048 },
+  { src: "39.jpg", width: 3089, height: 2048 },
+  { src: "40.jpg", width: 3089, height: 2048 },
+  { src: "41.jpg", width: 3089, height: 2048 },
+  { src: "42.jpg", width: 3089, height: 2048 },
+  { src: "43.jpg", width: 3089, height: 2048 },
+  { src: "44.jpg", width: 3089, height: 2048 },
+  { src: "45.jpg", width: 3089, height: 2048 },
+  { src: "46.jpg", width: 3089, height: 2048 },
+  { src: "47.jpg", width: 3089, height: 2048 },
+  { src: "48.jpg", width: 3089, height: 2048 },
+  { src: "49.jpg", width: 3089, height: 2048 },
+  { src: "50.jpg", width: 3089, height: 2048 },
+  { src: "51.jpg", width: 3089, height: 2048 },
+  { src: "52.jpg", width: 3089, height: 2048 },
+  { src: "53.jpg", width: 3089, height: 2048 },
+  { src: "54.jpg", width: 3089, height: 2048 },
+  { src: "55.jpg", width: 3089, height: 2048 },
+  { src: "56.jpg", width: 2048, height: 3089 },
+  { src: "57.jpeg", width: 1544, height: 1024 },
+  { src: "58.jpeg", width: 1544, height: 1024 },
+  { src: "59.jpeg", width: 1544, height: 1024 },
+  { src: "60.jpeg", width: 1544, height: 1024 },
+  { src: "61.jpeg", width: 1544, height: 1024 },
+  { src: "62.jpeg", width: 1544, height: 1024 },
+  { src: "63.jpeg", width: 1544, height: 1024 },
+  { src: "64.jpeg", width: 1544, height: 1024 },
+  { src: "65.jpeg", width: 1544, height: 1024 },
 ];
 
-
 const fishFiles = [
-  { src: "fish/1.jpeg", width: 1089, height: 722, title: "OPHELIA STINKS OF ROSES AND BUSINESS CASUAL" },
+  {
+    src: "fish/1.jpeg",
+    width: 1089,
+    height: 722,
+    title: "OPHELIA STINKS OF ROSES AND BUSINESS CASUAL",
+  },
   { src: "fish/2.jpeg", width: 1089, height: 722 },
   { src: "fish/3.jpeg", width: 1089, height: 722 },
   { src: "fish/4.jpeg", width: 1089, height: 722 },
@@ -56,7 +90,7 @@ const fishFiles = [
 ];
 
 function organizeImages(files) {
-  const filePath = "/assets/photos/"
+  const filePath = "/assets/photos/";
   return files.map((file) => {
     return {
       src: filePath + file.src,
