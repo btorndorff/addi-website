@@ -8,16 +8,9 @@ export default function About({ isMobileView }) {
     <>
       {isMobileView ? (
         <div className="absolute w-full min-h-full flex flex-col justify-center items-center text-white z-0 overflow-scroll">
-          <div className="content">
-            <div
-              className="display-content"
-              style={{
-                height: "100vh",
-                alignItems: "flex-start",
-                color: "black",
-              }}
-            >
-              <div className="flex flex-col justify-center items-center p-4 mt-[20%]">
+          <div className="content h-full">
+            <div className="display-content h-full">
+              <div className="flex flex-col justify-center items-center h-full p-4 text-black">
                 <LazyLoadingImg imageSrc="/assets/about.jpeg" />
 
                 <div
