@@ -18,7 +18,7 @@ export default function About({ isMobileView }) {
               }}
             >
               <div className="flex flex-col justify-center items-center p-4 mt-[20%]">
-                <LazyLoadingImg imageSrc="/assets/about.jpg" />
+                <LazyLoadingImg imageSrc="/assets/about.jpeg" />
 
                 <div
                   style={{
@@ -73,7 +73,7 @@ export default function About({ isMobileView }) {
             >
               <div style={{ display: "flex", gap: "20px", margin: "10%" }}>
                 <img
-                  src="/assets/about.jpg"
+                  src="/assets/about.jpeg"
                   style={{ width: "40%", height: "auto" }}
                 />
                 <div

@@ -20,7 +20,7 @@ const imageFiles = [
     height: 2049,
   },
   {
-    src: "1.PNG",
+    src: "1.jpeg",
     width: 1536,
     height: 2049,
   },
