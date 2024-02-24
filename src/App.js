@@ -34,8 +34,6 @@ function App() {
       setIsMobileView(window.innerWidth <= 768);
     };
 
-    console.log(window.innerWidth <= 768);
-
     window.addEventListener("resize", handleResize);
 
     return () => {
