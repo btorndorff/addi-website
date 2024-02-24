@@ -8,9 +8,12 @@ export default function About({ isMobileView }) {
     <>
       {isMobileView ? (
         <div className="absolute w-full min-h-full flex flex-col justify-center items-center text-white z-0 overflow-scroll">
-          <div className="content h-full">
-            <div className="display-content h-full">
-              <div className="flex flex-col justify-center items-center h-full p-4 text-black">
+          <div className="content">
+            <div className="display-content">
+              <div
+                className="photo-album text-black"
+                style={{ minHeight: "100vh" }}
+              >
                 <LazyLoadingImg imageSrc="/assets/about.jpeg" />
 
                 <div
@@ -64,7 +67,10 @@ export default function About({ isMobileView }) {
                 color: "black",
               }}
             >
-              <div style={{ display: "flex", gap: "20px", margin: "10%" }}>
+              <div
+                className="photo-albulm"
+                style={{ display: "flex", gap: "20px", margin: "10%" }}
+              >
                 <img
                   src="/assets/about.jpeg"
                   style={{ width: "40%", height: "auto" }}

@@ -47,7 +47,7 @@ function Nav({ selectedTab, setSelectedTab, isMobileView }) {
           )}
         </div>
       ) : (
-        <div className="container w-85 mx-auto text-center absolute top-14 z-10">
+        <div className="container w-85 m-auto text-center absolute top-14 z-10">
           <nav className="nav-style">
             <ul className="ul-web">
               <Link
