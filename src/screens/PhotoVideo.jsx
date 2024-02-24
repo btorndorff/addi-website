@@ -7,6 +7,8 @@ import { PhotoAlbum } from "react-photo-album";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import Video from "yet-another-react-lightbox/plugins/video";
+import LayersIcon from "@mui/icons-material/AutoAwesomeMotion";
+import VideoIcon from "@mui/icons-material/PlayCircleOutline";
 
 function _replaceExtensionWithMp4(filePath) {
   const pathArray = filePath.split(".");
@@ -14,7 +16,7 @@ function _replaceExtensionWithMp4(filePath) {
   return pathArray.join(".");
 }
 
-function PhotoVideo() {
+function PhotoVideo({ isMobileView }) {
   const [videoOpen, setVideoOpen] = useState(false);
   const [displayVideo, setDisplayVideo] = useState([]);
 
@@ -56,43 +58,49 @@ function PhotoVideo() {
   };
 
   return (
-    <div className="home">
-      <div className="content">
-        <div className="display-content">
-          <div className="photo-album">
-            {/* videos */}
-            <PhotoAlbum
-              layout="rows"
-              photos={Videos}
-              targetRowHeight={200}
-              renderPhoto={({ photo, wrapperStyle, renderDefaultPhoto }) => (
-                <div
-                  className="video-container"
-                  style={wrapperStyle}
-                  onClick={() => openVideoModal(photo)}
-                >
-                  <div className="photo-div">
-                    {renderDefaultPhoto({ wrapped: true })}
-                  </div>
-                  <p style={{ color: "inherit", fontSize: "1vw" }}>{photo.title}</p>
-                </div>
-              )}
-            />
+    <div>
+      {isMobileView ? (
+        <div className="absolute w-full min-h-full flex flex-col justify-center items-center text-white z-0 overflow-scroll">
+          <div className="content">
+            <div className="display-content">
+              <div className="photo-album">
+                {/* videos */}
+                <PhotoAlbum
+                  layout="columns"
+                  photos={Videos}
+                  targetRowHeight={200}
+                  columns={1}
+                  renderPhoto={({
+                    photo,
+                    wrapperStyle,
+                    renderDefaultPhoto,
+                  }) => (
+                    <div
+                      className="video-container relative"
+                      style={wrapperStyle}
+                      onClick={() => openVideoModal(photo)}
+                    >
+                      {/* Video icon */}
+                      <VideoIcon className="absolute top-0 right-0 m-2 text-white opacity-75" />
 
-            <Lightbox
-              open={videoOpen}
-              close={() => setVideoOpen(false)}
-              render={{
-                buttonPrev: () => null,
-                buttonNext: () => null,
-              }}
-              slides={[displayVideo]}
-              plugins={[Video]}
-            />
+                      <div>{renderDefaultPhoto({ wrapped: true })}</div>
+                    </div>
+                  )}
+                />
 
-            {/* fish photos */}
-            <div style={{ display: "flex", justifyContent: "center" }}>
-              <div className="one-column">
+                <Lightbox
+                  open={videoOpen}
+                  close={() => setVideoOpen(false)}
+                  render={{
+                    buttonPrev: () => null,
+                    buttonNext: () => null,
+                  }}
+                  slides={[displayVideo]}
+                  plugins={[Video]}
+                />
+
+                {/* fish photos */}
+
                 <PhotoAlbum
                   layout="columns"
                   columns={1}
@@ -104,14 +112,14 @@ function PhotoVideo() {
                     renderDefaultPhoto,
                   }) => (
                     <div
-                      className="video-container"
+                      className="video-container relative"
                       style={wrapperStyle}
                       onClick={() => openFishModal(photo)}
                     >
-                      <div className="photo-div">
-                        {renderDefaultPhoto({ wrapped: true })}
-                      </div>
-                      <p style={{ color: "inherit", fontSize: "1vw"}}>{photo.title}</p>
+                      {/* Layers icon */}
+                      <LayersIcon className="absolute top-0 right-0 m-2 text-white opacity-50" />
+
+                      <div>{renderDefaultPhoto({ wrapped: true })}</div>
                     </div>
                   )}
                 />
@@ -122,40 +130,158 @@ function PhotoVideo() {
                   slides={FishPhotos}
                   render={{ iconSlideshowPlay: () => null }}
                 />
+
+                {/* film photos */}
+                <PhotoAlbum
+                  layout="masonry"
+                  columns={(containerWidth) => {
+                    if (containerWidth < 400) return 1;
+                    if (containerWidth < 600) return 2;
+                    return 3;
+                  }}
+                  photos={Photos}
+                  renderPhoto={({
+                    photo,
+                    wrapperStyle,
+                    renderDefaultPhoto,
+                  }) => (
+                    <div
+                      onClick={() => openPhotoModal(photo.src)}
+                      style={wrapperStyle}
+                    >
+                      {renderDefaultPhoto({ wrapped: true })}
+                    </div>
+                  )}
+                />
+
+                <Lightbox
+                  open={photoOpen}
+                  close={() => setPhotoOpen(false)}
+                  slides={[displayPhoto]}
+                  render={{
+                    buttonPrev: () => null,
+                    buttonNext: () => null,
+                  }}
+                />
               </div>
             </div>
-
-            {/* film photos */}
-            <PhotoAlbum
-              layout="masonry"
-              columns={(containerWidth) => {
-                if (containerWidth < 400) return 1;
-                if (containerWidth < 600) return 2;
-                return 3;
-              }}
-              photos={Photos}
-              renderPhoto={({ photo, wrapperStyle, renderDefaultPhoto }) => (
-                <div
-                  onClick={() => openPhotoModal(photo.src)}
-                  style={wrapperStyle}
-                >
-                  {renderDefaultPhoto({ wrapped: true })}
-                </div>
-              )}
-            />
-
-            <Lightbox
-              open={photoOpen}
-              close={() => setPhotoOpen(false)}
-              slides={[displayPhoto]}
-              render={{
-                buttonPrev: () => null,
-                buttonNext: () => null,
-              }}
-            />
           </div>
         </div>
-      </div>
+      ) : (
+        <div className="home">
+          <div className="content">
+            <div className="display-content">
+              <div className="photo-album">
+                {/* videos */}
+                <PhotoAlbum
+                  layout="rows"
+                  photos={Videos}
+                  targetRowHeight={200}
+                  renderPhoto={({
+                    photo,
+                    wrapperStyle,
+                    renderDefaultPhoto,
+                  }) => (
+                    <div
+                      className="video-container"
+                      style={wrapperStyle}
+                      onClick={() => openVideoModal(photo)}
+                    >
+                      <div className="photo-div">
+                        {renderDefaultPhoto({ wrapped: true })}
+                      </div>
+                      <p style={{ color: "inherit", fontSize: "1vw" }}>
+                        {photo.title}
+                      </p>
+                    </div>
+                  )}
+                />
+
+                <Lightbox
+                  open={videoOpen}
+                  close={() => setVideoOpen(false)}
+                  render={{
+                    buttonPrev: () => null,
+                    buttonNext: () => null,
+                  }}
+                  slides={[displayVideo]}
+                  plugins={[Video]}
+                />
+
+                {/* fish photos */}
+                <div style={{ display: "flex", justifyContent: "center" }}>
+                  <div className="one-column">
+                    <PhotoAlbum
+                      layout="columns"
+                      columns={1}
+                      photos={FishCover}
+                      rowConstraints={{ singleRowMaxHeight: 500 }}
+                      renderPhoto={({
+                        photo,
+                        wrapperStyle,
+                        renderDefaultPhoto,
+                      }) => (
+                        <div
+                          className="video-container"
+                          style={wrapperStyle}
+                          onClick={() => openFishModal(photo)}
+                        >
+                          <div className="photo-div">
+                            {renderDefaultPhoto({ wrapped: true })}
+                          </div>
+                          <p style={{ color: "inherit", fontSize: "1vw" }}>
+                            {photo.title}
+                          </p>
+                        </div>
+                      )}
+                    />
+
+                    <Lightbox
+                      open={fishOpen}
+                      close={() => setFishOpen(false)}
+                      slides={FishPhotos}
+                      render={{ iconSlideshowPlay: () => null }}
+                    />
+                  </div>
+                </div>
+
+                {/* film photos */}
+                <PhotoAlbum
+                  layout="masonry"
+                  columns={(containerWidth) => {
+                    if (containerWidth < 400) return 1;
+                    if (containerWidth < 600) return 2;
+                    return 3;
+                  }}
+                  photos={Photos}
+                  renderPhoto={({
+                    photo,
+                    wrapperStyle,
+                    renderDefaultPhoto,
+                  }) => (
+                    <div
+                      onClick={() => openPhotoModal(photo.src)}
+                      style={wrapperStyle}
+                    >
+                      {renderDefaultPhoto({ wrapped: true })}
+                    </div>
+                  )}
+                />
+
+                <Lightbox
+                  open={photoOpen}
+                  close={() => setPhotoOpen(false)}
+                  slides={[displayPhoto]}
+                  render={{
+                    buttonPrev: () => null,
+                    buttonNext: () => null,
+                  }}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

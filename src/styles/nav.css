@@ -1,24 +1,22 @@
 /* Navbar.css */
-.container {
+/* .container {
   width: 85%;
-  margin: auto; /* Center horizontally and vertically */
-  text-align: center; /* Center the text within the container */
+  margin: auto;
+  text-align: center; 
   position: absolute;
   top: 50px;
-}
+} */
 
-nav {
-  /* background-color: #333; */
+.nav-style {
   display: flex;
   justify-content: center;
   margin: auto;
-  /* margin-top: 50px; */
   width: 80%;
   font-size: 18px;
   z-index: 1;
 }
 
-ul {
+.ul-web {
   list-style-type: none;
   min-width: 100%;
   display: flex;
@@ -31,17 +29,14 @@ Link {
   padding: 10px;
 }
 
-ul > a {
+.ul-web > a {
   text-decoration: none;
-  /* color: #FFF27D; */
   width: 100%;
   height: fit-content;
-  /* margin-right: 20px; */
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* /* width: 152px; */
   min-height: 35px;
   border-radius: 10px 10px 0px 0px;
   border-top: 2px solid #fff27d;
@@ -50,12 +45,11 @@ ul > a {
 }
 
 .selected {
-  /* min-height: 42px; */
-  background: rgba(217, 121, 138, 0.79);
+  background: #d9798ac9;
 }
 
 .selected-home {
-  background: rgba(169, 162, 101, 0.79);
+  background: #a9a265c9;
 }
 
 .navbox {

@@ -21,11 +21,11 @@ function App() {
   if (pathname !== "/" && pathname !== "/addi-website" && pathname !== "") {
     initialTab = pathname.replace("/", "");
   }
+  const location = useLocation();
 
   const [selectedTab, setSelectedTab] = useState(initialTab);
 
   const changeSelectedTab = (tab) => {
-    console.log("changed");
     setSelectedTab(tab);
   };
 
@@ -34,6 +34,8 @@ function App() {
       setIsMobileView(window.innerWidth <= 768);
     };
 
+    console.log(window.innerWidth <= 768);
+
     window.addEventListener("resize", handleResize);
 
     return () => {
@@ -41,40 +43,84 @@ function App() {
     };
   }, []);
 
+  useEffect(() => {
+    let tabName = location.pathname.replace("/", "");
+
+    if (tabName === "#" || tabName === "") tabName = "home";
+    changeSelectedTab(tabName);
+  }, [location]);
+
   return (
     <>
-      {!isMobileView && (
-        <div className="App">
+      <div className="App">
+        <div className="absolute inset-0 z-0">
           <img
-            className="background"
+            className="object-cover w-full h-full fixed"
             src="/assets/ghibli.GIF"
           />
-          <Navbar
-            selectedTab={selectedTab}
-            setSelectedTab={changeSelectedTab}
-          />
         </div>
-      )}
+
+        <Navbar
+          selectedTab={selectedTab}
+          setSelectedTab={changeSelectedTab}
+          isMobileView={isMobileView}
+        />
+      </div>
 
       <Routes>
-        {isMobileView ? (
-          <>
-            <Route path="/" element={<DesktopMessage />} />
-            <Route path="/addi-website" element={<DesktopMessage />} />
-            <Route path="" element={<DesktopMessage />} />
-          </>
-        ) : (
-          <>
-            <Route path="/" element={<Home />} />
-            <Route path="/addi-website" element={<Home />} />
-            <Route path="" element={<Home />} />
-          </>
-        )}
-        <Route path="/photo-video" element={<PhotoVideo />} />
-        <Route path="/illustrations" element={<Illustrations />} />
-        <Route path="/pastry" element={<Pastry />} />
-        <Route path="/writing" element={<Writing />} />
-        <Route path="/about" element={<About />} />
+        <Route
+          path="/"
+          element={
+            <Home
+              isMobileView={isMobileView}
+              setSelectedTab={changeSelectedTab}
+            />
+          }
+        />
+        <Route
+          path="/#"
+          element={
+            <Home
+              isMobileView={isMobileView}
+              setSelectedTab={changeSelectedTab}
+            />
+          }
+        />
+        <Route
+          path="/addi-website"
+          element={
+            <Home
+              isMobileView={isMobileView}
+              setSelectedTab={changeSelectedTab}
+            />
+          }
+        />
+        <Route
+          path=""
+          element={
+            <Home
+              isMobileView={isMobileView}
+              setSelectedTab={changeSelectedTab}
+            />
+          }
+        />
+        <Route
+          path="/photo-video"
+          element={<PhotoVideo isMobileView={isMobileView} />}
+        />
+        <Route
+          path="/illustrations"
+          element={<Illustrations isMobileView={isMobileView} />}
+        />
+        <Route
+          path="/pastry"
+          element={<Pastry isMobileView={isMobileView} />}
+        />
+        <Route
+          path="/writing"
+          element={<Writing isMobileView={isMobileView} />}
+        />
+        <Route path="/about" element={<About isMobileView={isMobileView} />} />
       </Routes>
     </>
   );
