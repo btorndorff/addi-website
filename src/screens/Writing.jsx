@@ -2,6 +2,7 @@ import { React } from "react";
 import "../styles/home.css";
 import "../styles/photo.css";
 import "../styles/writing.css";
+import LazyLoadingImg from "../components/LazyLoadingImg";
 
 const WritingCard = ({ title, description, image, link }) => {
   let styleTitle = "writing-card-image";
@@ -15,7 +16,7 @@ const WritingCard = ({ title, description, image, link }) => {
       onClick={() => window.open(link, "_blank", "noopener,noreferrer")}
     >
       <div className={styleTitle}>
-        <img src={image} alt={title} />
+        <LazyLoadingImg imageSrc={image} alt={title} />
       </div>
 
       <div className="writing-card-content">

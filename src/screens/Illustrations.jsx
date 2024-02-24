@@ -10,6 +10,8 @@ import { ZineCover, Zine } from "../components/Zine";
 import { PhotoAlbum } from "react-photo-album";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
+import LazyLoadingImg from "../components/LazyLoadingImg";
+import LayersIcon from "@mui/icons-material/AutoAwesomeMotion";
 
 export default function Illustrations({ isMobileView }) {
   const [photoOpen, setPhotoOpen] = useState(false);
@@ -56,13 +58,9 @@ export default function Illustrations({ isMobileView }) {
                       style={wrapperStyle}
                       onClick={() => openZineModal(photo)}
                     >
-                      <div
-                        className="photo-div"
-                        style={{
-                          boxShadow: "5px 5px 5px 5px rgba(0, 0, 0, 0.5)",
-                        }}
-                      >
-                        {renderDefaultPhoto({ wrapped: true })}
+                      <div>
+                        <LazyLoadingImg imageSrc={photo.src} />
+                        <LayersIcon className="absolute top-0 right-0 m-2 text-white opacity-75" />
                       </div>
                       <p style={{ color: "inherit" }}>{photo.title}</p>
                     </div>
@@ -91,15 +89,10 @@ export default function Illustrations({ isMobileView }) {
                       style={wrapperStyle}
                       onClick={() => openToteModal(photo)}
                     >
-                      <div
-                        className="photo-div"
-                        style={{
-                          boxShadow: "5px 5px 5px 5px rgba(0, 0, 0, 0.5)",
-                        }}
-                      >
-                        {renderDefaultPhoto({ wrapped: true })}
+                      <div>
+                        <LazyLoadingImg imageSrc={photo.src} />
+                        <LayersIcon className="absolute top-0 right-0 m-2 text-white opacity-75" />
                       </div>
-                      <p style={{ color: "inherit" }}>{photo.title}</p>
                     </div>
                   )}
                 />
@@ -129,7 +122,7 @@ export default function Illustrations({ isMobileView }) {
                       onClick={() => openPhotoModal(photo.src)}
                       style={wrapperStyle}
                     >
-                      {renderDefaultPhoto({ wrapped: true })}
+                      <LazyLoadingImg imageSrc={photo.src} />
                     </div>
                   )}
                 />
@@ -175,7 +168,7 @@ export default function Illustrations({ isMobileView }) {
                               boxShadow: "5px 5px 5px 5px rgba(0, 0, 0, 0.5)",
                             }}
                           >
-                            {renderDefaultPhoto({ wrapped: true })}
+                            <LazyLoadingImg imageSrc={photo.src} />
                           </div>
                           <p style={{ color: "inherit" }}>{photo.title}</p>
                         </div>
@@ -214,7 +207,7 @@ export default function Illustrations({ isMobileView }) {
                               boxShadow: "5px 5px 5px 5px rgba(0, 0, 0, 0.5)",
                             }}
                           >
-                            {renderDefaultPhoto({ wrapped: true })}
+                            <LazyLoadingImg imageSrc={photo.src} />
                           </div>
                           <p style={{ color: "inherit" }}>{photo.title}</p>
                         </div>
@@ -248,7 +241,7 @@ export default function Illustrations({ isMobileView }) {
                       onClick={() => openPhotoModal(photo.src)}
                       style={wrapperStyle}
                     >
-                      {renderDefaultPhoto({ wrapped: true })}
+                      <LazyLoadingImg imageSrc={photo.src} />
                     </div>
                   )}
                 />

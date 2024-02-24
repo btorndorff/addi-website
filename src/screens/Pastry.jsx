@@ -8,7 +8,7 @@ import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import Slideshow from "../components/Slideshow";
 
-export default function Pastry(isMobileView) {
+export default function Pastry({ isMobileView }) {
   return (
     <div>
       {isMobileView ? (

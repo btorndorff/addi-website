@@ -1,14 +1,35 @@
 const imageFiles = [
   {
-    src: "1.PNG",
-    width: 1536,
-    height: 2049,
+    src: "8.jpeg",
+    width: 1587,
+    height: 2245,
+  },
+  {
+    src: "10.jpeg",
+    width: 2000,
+    height: 1429,
+  },
+  {
+    src: "7.jpeg",
+    width: 3024,
+    height: 4032,
   },
   {
     src: "2.JPG",
     width: 1536,
     height: 2049,
   },
+  {
+    src: "1.PNG",
+    width: 1536,
+    height: 2049,
+  },
+  {
+    src: "9.jpeg",
+    width: 1242,
+    height: 1332,
+  },
+
   {
     src: "3.JPG",
     width: 2049,
@@ -29,26 +50,7 @@ const imageFiles = [
     width: 3264,
     height: 2496,
   },
-  {
-    src: "7.jpeg",
-    width: 3024,
-    height: 4032,
-  },
-  {
-    src: "8.jpeg",
-    width: 1587,
-    height: 2245,
-  },
-  {
-    src: "9.jpeg",
-    width: 1242,
-    height: 1332,
-  },
-  {
-    src: "10.jpeg",
-    width: 2000,
-    height: 1429,
-  },
+
   {
     src: "11.jpeg",
     width: 2048,

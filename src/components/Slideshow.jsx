@@ -32,7 +32,7 @@ export default function Slideshow({ ...props }) {
         renderPhoto={({ photo, wrapperStyle, renderDefaultPhoto }) => (
           <div style={wrapperStyle} onClick={() => openPhotoModal(photo.index)}>
             {/* Render the LazyLoadingImg component instead of the image directly */}
-            <LazyLoadingImg imageSrc={photo.src} altText={photo.alt} />
+            <LazyLoadingImg imageSrc={photo.src} />
           </div>
         )}
       />

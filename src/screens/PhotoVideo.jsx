@@ -9,6 +9,7 @@ import "yet-another-react-lightbox/styles.css";
 import Video from "yet-another-react-lightbox/plugins/video";
 import LayersIcon from "@mui/icons-material/AutoAwesomeMotion";
 import VideoIcon from "@mui/icons-material/PlayCircleOutline";
+import LazyLoadingImg from "../components/LazyLoadingImg";
 
 function _replaceExtensionWithMp4(filePath) {
   const pathArray = filePath.split(".");
@@ -83,7 +84,9 @@ function PhotoVideo({ isMobileView }) {
                       {/* Video icon */}
                       <VideoIcon className="absolute top-0 right-0 m-2 text-white opacity-75" />
 
-                      <div>{renderDefaultPhoto({ wrapped: true })}</div>
+                      <div>
+                        <LazyLoadingImg imageSrc={photo.src} />
+                      </div>
                     </div>
                   )}
                 />
@@ -119,7 +122,9 @@ function PhotoVideo({ isMobileView }) {
                       {/* Layers icon */}
                       <LayersIcon className="absolute top-0 right-0 m-2 text-white opacity-50" />
 
-                      <div>{renderDefaultPhoto({ wrapped: true })}</div>
+                      <div>
+                        <LazyLoadingImg imageSrc={photo.src} />
+                      </div>
                     </div>
                   )}
                 />
@@ -149,7 +154,7 @@ function PhotoVideo({ isMobileView }) {
                       onClick={() => openPhotoModal(photo.src)}
                       style={wrapperStyle}
                     >
-                      {renderDefaultPhoto({ wrapped: true })}
+                      <LazyLoadingImg imageSrc={photo.src} />
                     </div>
                   )}
                 />
@@ -190,6 +195,7 @@ function PhotoVideo({ isMobileView }) {
                       <div className="photo-div">
                         {renderDefaultPhoto({ wrapped: true })}
                       </div>
+
                       <p style={{ color: "inherit", fontSize: "1vw" }}>
                         {photo.title}
                       </p>
@@ -227,7 +233,7 @@ function PhotoVideo({ isMobileView }) {
                           onClick={() => openFishModal(photo)}
                         >
                           <div className="photo-div">
-                            {renderDefaultPhoto({ wrapped: true })}
+                            <LazyLoadingImg imageSrc={photo.src} />
                           </div>
                           <p style={{ color: "inherit", fontSize: "1vw" }}>
                             {photo.title}
@@ -263,7 +269,7 @@ function PhotoVideo({ isMobileView }) {
                       onClick={() => openPhotoModal(photo.src)}
                       style={wrapperStyle}
                     >
-                      {renderDefaultPhoto({ wrapped: true })}
+                      <LazyLoadingImg imageSrc={photo.src} />
                     </div>
                   )}
                 />

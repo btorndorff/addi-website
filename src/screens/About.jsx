@@ -1,6 +1,7 @@
 import { React } from "react";
 import "../styles/home.css";
 import "../styles/photo.css";
+import LazyLoadingImg from "../components/LazyLoadingImg";
 
 export default function About({ isMobileView }) {
   return (
@@ -17,7 +18,8 @@ export default function About({ isMobileView }) {
               }}
             >
               <div className="flex flex-col justify-center items-center p-4 mt-[20%]">
-                <img src="/assets/about.jpg" className="mb-2" />
+                <LazyLoadingImg imageSrc="/assets/about.jpg" />
+
                 <div
                   style={{
                     display: "flex",
@@ -25,6 +27,7 @@ export default function About({ isMobileView }) {
                     alignItems: "center",
                     gap: "10px",
                     padding: "5px",
+                    marginTop: "10px",
                   }}
                 >
                   <p>

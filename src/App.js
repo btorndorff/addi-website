@@ -9,6 +9,7 @@ import Illustrations from "./screens/Illustrations";
 import Pastry from "./screens/Pastry";
 import Writing from "./screens/Writing";
 import About from "./screens/About";
+import LazyLoadingImg from "./components/LazyLoadingImg";
 
 function DesktopMessage() {
   return <p>Please use this site on desktop!</p>;
